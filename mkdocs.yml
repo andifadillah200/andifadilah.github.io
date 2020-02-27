@@ -1,0 +1,61 @@
+# Project information
+site_name: 'A. Fadilah Aini (180411100114)'
+site_description: 'Repository Untuk Tugas'
+site_author: 'A.Fadilah Aini'
+site_url: 'https://andifadillah200.github.io/andifadilah1.github.io/'
+
+# Repository
+repo_name: 'A.FADILAH AINI'
+repo_url: 'https://github.com/andifadillah200/Datamining'
+
+# Copyright
+copyright: 'Copyright &copy; 2019 A.Fadilah Aini'
+
+# Configuration
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'cyan'
+    accent: 'cyan'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+
+# Customization
+extra:
+  manifest: 'manifest.webmanifest'
+  social:
+    - type: 'github'
+      link: 'https://github.com/haekalskyzen.github.io/'
+    - type: 'linkedin'
+      link: 'https://linkedin.com/in/mohammadhaekal33'
+    - type: 'facebook'
+      link: 'https://facebook.com/mohammadhaekal13'
+    - type: "instagram"
+      link: 'https://instagram.com/mohammadhaekal13'
+    - type: 'twitter'
+      link: 'https://twitter.com/mohammadhaekal8'
+    
+    
+
+# Google Analytics
+google_analytics:
+  - 'UA-XXXXXXXX-X'
+  - 'auto'
+extra_javascript:
+  - 'javascripts/extra.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+nav :
+  - Home : index.md
+  - Statistika : Pengertian (Andi).md
+  - Menghitung Jarak Data : Mengukur Jarak Data (Penambangan Data).md
+  - Regresi Linier Berganda : Regresi Linier.md
