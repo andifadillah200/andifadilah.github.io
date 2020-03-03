@@ -56,6 +56,6 @@ markdown_extensions:
   - pymdownx.arithmatex
 nav :
   - Home : index.md
-  - Statistika : Pengertian (Andi).md
-  - Menghitung Jarak Data : Mengukur Jarak Data (Penambangan Data).md
-  - Regresi Linier Berganda : Regresi Linier.md
+  #- Statistika : Pengertian (Andi).md
+  #- Menghitung Jarak Data : Mengukur Jarak Data (Penambangan Data).md
+  #- Regresi Linier Berganda : Regresi Linier.md

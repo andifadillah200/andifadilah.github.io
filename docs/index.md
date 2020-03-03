@@ -2,7 +2,7 @@
 
 ## **Profil Singkat**
 - Nama : A.Fadilah Aini
-- NIM : 18041110014
-- Kelas : Penambangan Data 5C
+- NIM : 180411100114
+- Kelas : Komputasi Numerik Kelas A
 - Dosen Pengampuh : Mulaab, S.Si, M.Kom
-- Program Studi : Teknik Informatika
+- Program Studi : Teknik Informatikaaa
