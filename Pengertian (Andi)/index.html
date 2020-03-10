@@ -331,6 +331,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tugas2/" title="Newthon Rapshon" class="md-nav__link">
+      Newthon Rapshon
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -402,10 +414,7 @@
 <p>Dalam kasus khusus jika <em>a=0</em>, maka disebut <em>Deret MacLaurin</em> atau sering disebut Deret Taylor baku. Dan didefinisikan sebagai berikut </p>
 <p>Definisi :
 $$
-f(x)=f(0)+f’(0)x \displaystyle+\frac{{{f}\text{'}\text{'}{\left({0}\right)}}}{{{2}!}}{x}^{2}
-\displaystyle+\frac{{{f}\text{'}\text{'}\text{'}{\left({0}\right)}}}{{{3}!}}{x}^{3}
-\displaystyle+\ldots
-\displaystyle+\frac{{{{f}^{{\text{n}}}{\left({0}\right)}}}}{{{n}!}}{x}^{n}
+f(x)=f(0)+{f^{1}(0)}x+\frac{f^{2}(0)}{2 !} x^{2}+\frac{f^{3}(0)}{3 !} x^{3}+\frac{f^{4}(0)}{4 !} x^{4} + ...+\frac{f^{n}(0)}{n !} x^{n}
 $$
 Atau bisa dinyatakan dengan:
 $$
@@ -426,42 +435,34 @@ $$
 Tabel perhitungan untuk turunan exponensial  :</p>
 <div>
 <div class="MathJax_Preview">
-f(a)=e^{2x}
+f^1(a)=2e^{2x}
 </div>
 <script type="math/tex; mode=display">
-f(a)=e^{2x}
+f^1(a)=2e^{2x}
 </script>
 </div>
 <div>
 <div class="MathJax_Preview">
-f'(a)=2e^{2x}
+f^2(a)=4e^{2x}
 </div>
 <script type="math/tex; mode=display">
-f'(a)=2e^{2x}
+f^2(a)=4e^{2x}
 </script>
 </div>
 <div>
 <div class="MathJax_Preview">
-f''(a)=4e^{2x}
+f^3(a)=8e^{2x}
 </div>
 <script type="math/tex; mode=display">
-f''(a)=4e^{2x}
+f^3(a)=8e^{2x}
 </script>
 </div>
 <div>
 <div class="MathJax_Preview">
-f'''(a)=8e^{2x}
+f^4(a)=16e^{2x}
 </div>
 <script type="math/tex; mode=display">
-f'''(a)=8e^{2x}
-</script>
-</div>
-<div>
-<div class="MathJax_Preview">
-f''''(a)=16e^{2x}
-</div>
-<script type="math/tex; mode=display">
-f''''(a)=16e^{2x}
+f^4(a)=16e^{2x}
 </script>
 </div>
 <div>
@@ -474,15 +475,15 @@ f''''(a)=16e^{2x}
 </div>
 <p>Berikut adalah penyelesaian untuk mencari nilai expansi :
 $$
-f(x)=f(0)+\frac{f^{\prime}(0)}{1 !} x+\frac{f^{\prime \prime}(0)}{2 !} x^{2}+\frac{f^{\prime \prime \prime}(0)}{3 !} x^{3}+\frac{f^{\prime \prime \prime \prime}(0)}{4 !} x^{4} + ...
+f(x)=f(0)+\frac{f^{1}(0)}{1 !} x+\frac{f^{2}(0)}{2 !} x^{2}+\frac{f^{3}(0)}{3 !} x^{3}+\frac{f^{4}(0)}{4 !} x^{4} + ...+\frac{f^{n}(0)}{n !} x^{n}i :
 $$
 nilai turunan pada tabel dimasukkan kedalam rumus sehingga didapatkan seperti ini :
 $$
-f(x)=1+\frac{2}{1 !} x+\frac{4}{2 !} x^{2}+\frac{8}{3 !} x^{3}+\frac{16}{4 !} x^{4} + ...
+f(x)=1+\frac{2}{1 !} x+\frac{4}{2 !} x^{2}+\frac{8}{3 !} x^{3}+\frac{16}{4 !} x^{4} + ...+\frac{2^{n}}{n!} x^{n}
 $$
 kemudian, nilai x diganti dengan 4 :
 $$
-f(x)=1+\frac{2}{1 !} 4+\frac{4}{2 !} 4^{2}+\frac{8}{3 !} 4^{3}+\frac{16}{4 !} 4^{4} + ...
+f(x)=1+\frac{2}{1 !} 4+\frac{4}{2 !} 4^{2}+\frac{8}{3 !} 4^{3}+\frac{16}{4 !} 4^{4} + ...+\frac{2^{n}}{n !} 4^{n}
 $$
 perhitungan diatas akan terus berulang hingga nilai selisih mendekati nilai error yang ditentukan yaitu kurang dari 0,001</p>
 <h3 id="listing-program">Listing Program<a class="headerlink" href="#listing-program" title="Permanent link">&para;</a></h3>
@@ -511,33 +512,33 @@ perhitungan diatas akan terus berulang hingga nilai selisih mendekati nilai erro
 
 
 <p><strong>Output</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">0</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">1.0</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">1</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">8.0</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">2</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">32.0</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">3</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">85.33333333333333</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">4</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">170.66666666666669</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">5</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">273.0666666666666</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">6</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">364.08888888888896</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">7</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">416.1015873015872</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">8</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">416.1015873015872</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">9</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">369.8680776014112</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">10</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">295.89446208112895</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">11</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">215.195972422639</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">12</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">143.46398161509296</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">13</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">88.28552714774924</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">14</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">50.448872655856576</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">15</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">26.90606541645684</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">16</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">13.45303270822842</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">17</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">6.330838921519444</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">18</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">2.8137061873417224</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">19</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">1.184718394670199</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">20</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.47388735786807956</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">21</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.18052851728316455</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">22</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.06564673355751438</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">23</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.022833646454728296</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">24</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.0076112154847578495</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">25</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.0024355889549951826</span>
-<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">26</span> <span class="o">=</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.0007494119863622473</span>
+<div class="codehilite"><pre><span></span><code><span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">0</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">1</span> <span class="o">=</span> <span class="mf">9.0</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">8.0</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">2</span> <span class="o">=</span> <span class="mf">41.0</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">32.0</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">3</span> <span class="o">=</span> <span class="mf">126.33333333333333</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">85.33333333333333</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">4</span> <span class="o">=</span> <span class="mf">297.0</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">170.66666666666669</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">5</span> <span class="o">=</span> <span class="mf">570.0666666666666</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">273.0666666666666</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">6</span> <span class="o">=</span> <span class="mf">934.1555555555556</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">364.08888888888896</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">7</span> <span class="o">=</span> <span class="mf">1350.2571428571428</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">416.1015873015872</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">8</span> <span class="o">=</span> <span class="mf">1766.35873015873</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">416.1015873015872</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">9</span> <span class="o">=</span> <span class="mf">2136.226807760141</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">369.8680776014112</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">10</span> <span class="o">=</span> <span class="mf">2432.12126984127</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">295.89446208112895</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">11</span> <span class="o">=</span> <span class="mf">2647.317242263909</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">215.195972422639</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">12</span> <span class="o">=</span> <span class="mf">2790.781223879002</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">143.46398161509296</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">13</span> <span class="o">=</span> <span class="mf">2879.0667510267513</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">88.28552714774924</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">14</span> <span class="o">=</span> <span class="mf">2929.515623682608</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">50.448872655856576</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">15</span> <span class="o">=</span> <span class="mf">2956.4216890990647</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">26.90606541645684</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">16</span> <span class="o">=</span> <span class="mf">2969.874721807293</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">13.45303270822842</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">17</span> <span class="o">=</span> <span class="mf">2976.2055607288125</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">6.330838921519444</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">18</span> <span class="o">=</span> <span class="mf">2979.0192669161543</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">2.8137061873417224</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">19</span> <span class="o">=</span> <span class="mf">2980.2039853108245</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">1.184718394670199</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">20</span> <span class="o">=</span> <span class="mf">2980.6778726686925</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.47388735786807956</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">21</span> <span class="o">=</span> <span class="mf">2980.8584011859757</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.18052851728316455</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">22</span> <span class="o">=</span> <span class="mf">2980.924047919533</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.06564673355751438</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">23</span> <span class="o">=</span> <span class="mf">2980.946881565988</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.022833646454728296</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">24</span> <span class="o">=</span> <span class="mf">2980.9544927814727</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.0076112154847578495</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">25</span> <span class="o">=</span> <span class="mf">2980.9569283704277</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.0024355889549951826</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">26</span> <span class="o">=</span> <span class="mf">2980.957677782414</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.0007494119863622473</span>
 </code></pre></div>
                 
                   
@@ -574,6 +575,20 @@ perhitungan diatas akan terus berulang hingga nilai selisih mendekati nilai erro
             </div>
           </a>
         
+        
+          <a href="../tugas2/" title="Newthon Rapshon" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Newthon Rapshon
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
