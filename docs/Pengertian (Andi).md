@@ -1,100 +1,127 @@
-## **1. Mean(Rata-rata)**
-Pengertian mean adalah nilai rata-rata dari beberapa buah data. Nilai mean dapat ditentukan dengan cara membagi jumlah data dengan banyaknya data.
-Rumus untuk mencari mean seperti berikut:
+# Pendekatan Deret MacLaurin
+
+*DERET MacLaurin* adalah Suatu fungsi f(x) yang memiliki turunan *f'(x), f''(x), f'''(x)* dan seterusnya yang kontinyu dalam interval I dengan *a, x I* maka untuk *x* disekitar *a* yaitu *|x-a|<*R , *f(x)* dapat diekspansi kedalam Deret Taylor.
+
+Dalam kasus khusus jika *a=0*, maka disebut *Deret MacLaurin* atau sering disebut Deret Taylor baku. Dan didefinisikan sebagai berikut 
+
+Definisi :
 $$
-\overline{x}=\frac{\sum_{i=1}^{N} x_{i}}{N}=\frac{x_{1}+x_{2}+\cdots+x_{N}}{N}
+f(x)=f(0)+{f^{1}(0)}x+\frac{f^{2}(0)}{2 !} x^{2}+\frac{f^{3}(0)}{3 !} x^{3}+\frac{f^{4}(0)}{4 !} x^{4} + ...+\frac{f^{n}(0)}{n !} x^{n}
 $$
-
-## **2. Median**
-
-pengertian median adalah suatu cara untuk menentukan letak tengah sebuah data setelah data disusun menurut urutan nilainya.
-Rumus untuk mencari median seperti berikut:
-
+Atau bisa dinyatakan dengan:
 $$
-M e=x_{i j}+\left(\frac{\frac{n}{2}-f_{k i j}}{f_{i}}\right) p
+f(x)=\sum_{n=0}^\infty \frac{f^{(n)}n(0)}{n!}x^{n}
 $$
+Deret MacLaurin sangat bermanfaat dalam metode numerik untuk menghitung atau menghampiri nilai-nilai fungsi yang sudah dihitung secara manual seperti nilai *sin x, cos x*, . 
 
-## **3. Modus**
+## Tugas
 
-Pengertian modus adalah nilai yang sering muncul. Untuk ingin melihat suatu hasil akhir dari modus maka harus menentukan kelas pada tabel dengan memilih frekuensi yang paling banyak.
-Rumus untuk mencari modus seperti berikut:
+Hitunglah e^2x untuk nilai x=4, kemudian expensikan hingga selisih yang dihasilkan kurang dari nilai error yang ditentukan yaitu e < 0,001.
 
+### Penyelesaian
+
+Fungsi awal exponen :
 $$
-\text { mean }-\text { mode } \approx 3 \times(\text { mean }-\text { median })
+f(x) = e^{2x}\
 $$
-
-## **4. Standard deviasi**
-
-Pengertian standard deviasi adalah nilai statistik yang digunakan untuk menentukan bagaimana sebaran data dalam sampel, dan seberapa dekat titik data individu ke mean atau rata-rata nilai sampel.
-
-Rumus untuk mencari standard deviasi sebagai berikut:
-
+Dapat juga didefinisikan dengan rumus   : 
 $$
-\sigma ^ { 2 } = \frac { 1 } { N } \sum _ { i = 1 } ^ { N } ( x _ { i } - \overline { x } ) ^ { 2 } = ( \frac { 1 } { N } \sum _ { i = 1 } ^ { N } x _ { i } ^ { 2 } ) - \overline { x } ^ { 2 }
-$$	
+e^{2x} = \sum_{n=0}^\infty \frac{(2x)^n}{n!} = \sum_{n=0}^\infty (2)^n\frac{x^n}{n!}
+$$
+Tabel perhitungan untuk turunan exponensial  :
 
-## **5. Varian **
-
-Pengertian varian adalah ukuran seberapa jauh sebuah kumpulan bilangan tersebar, varian juga merupakan salah satu pendeskripsi dari sebuah distribusi probabilitas.
-Rumus untuk mencari devian sebagai berikut:
 
 $$
-\sigma = \frac { 1 } { N } \sum _ { i = 1 } ^ { N } ( x _ { i } - \overline { x } ) ^ { 2 } = ( \frac { 1 } { N } \sum _ { i = 1 } ^ { N } x _ { i } ^ { 2 } ) - \overline { x } ^ { 2 }
+f^1(a)=2e^{2x}
 $$
 
-## **6. Skewness (Kemiringan)**
-
-Pngertian skewness adalah derajat ketidaksimetrisan atau distribusi.
-
-Rumus untuk mencari skewness sebagai berikut:
-
 $$
-s k=\frac{\overline{X}-M o}{s}
+f^2(a)=4e^{2x}
 $$
 
-## **7.Kuartil**
-Pengertian kuartil adalah nilai-nilai yang membagi data yang telah diurutkan kedalam empat bagian yang nilainya sama besar, Kuartil terbagi menjadi 3 macam antara lain:
-
-a) Kuartil bawah (k1)
-
-b) kuartil tengah (k2)
-
-c)) Kuartil atas (k3)
-
-Rumus untuk memcri kuartil 1,2, dan 3 sebagai berikut:
+$$
+f^3(a)=8e^{2x}
+$$
 
 $$
-IQR=Q3−Q1
+f^4(a)=16e^{2x}
 $$
+
+$$
+...
+$$
+
+Berikut adalah penyelesaian untuk mencari nilai expansi :
+$$
+f(x)=f(0)+\frac{f^{1}(0)}{1 !} x+\frac{f^{2}(0)}{2 !} x^{2}+\frac{f^{3}(0)}{3 !} x^{3}+\frac{f^{4}(0)}{4 !} x^{4} + ...+\frac{f^{n}(0)}{n !} x^{n}i :
+$$
+nilai turunan pada tabel dimasukkan kedalam rumus sehingga didapatkan seperti ini :
+$$
+f(x)=1+\frac{2}{1 !} x+\frac{4}{2 !} x^{2}+\frac{8}{3 !} x^{3}+\frac{16}{4 !} x^{4} + ...+\frac{2^{n}}{n!} x^{n}
+$$
+kemudian, nilai x diganti dengan 4 :
+$$
+f(x)=1+\frac{2}{1 !} 4+\frac{4}{2 !} 4^{2}+\frac{8}{3 !} 4^{3}+\frac{16}{4 !} 4^{4} + ...+\frac{2^{n}}{n !} 4^{n}
+$$
+perhitungan diatas akan terus berulang hingga nilai selisih mendekati nilai error yang ditentukan yaitu kurang dari 0,001
+
+### Listing Program
+
+**Script**
+
 ```python
-import pandas as pd
-from scipy import stats
-import numpy as np
-import seaborn as sns
-import matplotlib as plt
-data = pd.read_csv("ANDIAJADOANG.csv",delimiter=";")
-cm = sns.light_palette("gold", as_cmap=True)
-data.style.background_gradient(cmap=cm)
+import math
 
-colum = data.columns.tolist()
-for x in colum :
-    ds = [x for x in data[x]]
-    desc = data[x].describe()
-    array = [x for x in desc]
-    print("Detail kolom",x)
-    print("rata-rata: ",array[1])
-    print("Median: ",np.median(np.array(ds)))
-    print("Modus: ",stats.mode(ds))
-    print("Standard deviasi: ",np.std(ds))
-    print("varian: ",stats.variation(ds))
-    print("Skewness: ",stats.skew(ds))
-    print("Quartil 1: ",array[4])
-    print("Quartil 2: ",array[5])
-    print("Quartil 3: ",array[6])
-    sns.distplot(data[x])
-    
+error = 0.001
+
+def f(x):
+    f_turunan = 1
+    current=i=0
+    iteration = True
+    while iteration:
+        old= current
+        current += (f_turunan*(x**i))/math.factorial(i)
+        print('f ke-', i,'=', 'Ea=', current-old )
+        if current-old < error:
+            iteration = False
+
+        else:
+            f_turunan *=2
+            i +=1
+
+f(4)
+
 ```
 
+**Output**
 
+```python
+f ke- 0 = 1.0 Ea= 1.0
+f ke- 1 = 9.0 Ea= 8.0
+f ke- 2 = 41.0 Ea= 32.0
+f ke- 3 = 126.33333333333333 Ea= 85.33333333333333
+f ke- 4 = 297.0 Ea= 170.66666666666669
+f ke- 5 = 570.0666666666666 Ea= 273.0666666666666
+f ke- 6 = 934.1555555555556 Ea= 364.08888888888896
+f ke- 7 = 1350.2571428571428 Ea= 416.1015873015872
+f ke- 8 = 1766.35873015873 Ea= 416.1015873015872
+f ke- 9 = 2136.226807760141 Ea= 369.8680776014112
+f ke- 10 = 2432.12126984127 Ea= 295.89446208112895
+f ke- 11 = 2647.317242263909 Ea= 215.195972422639
+f ke- 12 = 2790.781223879002 Ea= 143.46398161509296
+f ke- 13 = 2879.0667510267513 Ea= 88.28552714774924
+f ke- 14 = 2929.515623682608 Ea= 50.448872655856576
+f ke- 15 = 2956.4216890990647 Ea= 26.90606541645684
+f ke- 16 = 2969.874721807293 Ea= 13.45303270822842
+f ke- 17 = 2976.2055607288125 Ea= 6.330838921519444
+f ke- 18 = 2979.0192669161543 Ea= 2.8137061873417224
+f ke- 19 = 2980.2039853108245 Ea= 1.184718394670199
+f ke- 20 = 2980.6778726686925 Ea= 0.47388735786807956
+f ke- 21 = 2980.8584011859757 Ea= 0.18052851728316455
+f ke- 22 = 2980.924047919533 Ea= 0.06564673355751438
+f ke- 23 = 2980.946881565988 Ea= 0.022833646454728296
+f ke- 24 = 2980.9544927814727 Ea= 0.0076112154847578495
+f ke- 25 = 2980.9569283704277 Ea= 0.0024355889549951826
+f ke- 26 = 2980.957677782414 Ea= 0.0007494119863622473
+```
 
-​    
