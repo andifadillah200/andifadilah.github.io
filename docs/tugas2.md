@@ -8,8 +8,6 @@ Prosedur Metode Newton :
 
 menentukan *$x_0$* sebagai titik awal, kemudian menarik garis lurus (misal garis $\imath$ ) yang menyinggung titik *$f(x_0)$* . Hal ini berakibat garis $\imath$ memotong sumbu *$x$* di titik *$x_1$* Setelah itu diulangi langkah sebelumnya tapi sekarang *$x_1$* dianggap sebagai titik awalnya. Dari mengulang langkah-langkah sebelumnya akan mendapatkan *$x_2 , x_3 , ... , x_n$* dengan *$x_n$* yang diperoleh adalah bilangan riil yang merupakan akar atau mendekati akar yang sebenarnya.
 
-Perhatikan gambar diatas untuk menurunkan rumus **Metode Newton-Raphson**
-
 persamaan garis $\imath : y - y_0 = m(x - x_0)$
 
 
