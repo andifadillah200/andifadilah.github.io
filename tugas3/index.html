@@ -359,81 +359,81 @@ x_{i}=\frac{b_{i}-\sum_{j=i+1}^{n} a_{i.j}x_{j}}{a_i,j}
 </script>
 </div>
 <p><strong>Source Code</strong></p>
-<div class="codehilite"><pre><span></span><code>import numpy as np
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-#Definisi Matrix
-A = []
-B = []
+<span class="c1">#Definisi Matrix</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[]</span>
 
-n = int(input(&quot;Masukkan ordo Matrix: &quot;))
-for i in range(n):
-    baris=[]
-    for i in range(n):
-        a=int(input(&quot;Masukkan Nilai: &quot;))
-        baris.append(a)
-    A.append(baris)
-for i in range(n):
-    h = int(input(&quot;Masukkan Hasil: &quot;))
-    B.append(h)
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan ordo Matrix: &quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">baris</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">a</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai: &quot;</span><span class="p">))</span>
+        <span class="n">baris</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">A</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">baris</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Hasil: &quot;</span><span class="p">))</span>
+    <span class="n">B</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
 
-Matrix=np.array(A,float)
-Hasil=np.array(B,float)
+<span class="n">Matrix</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">Hasil</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="nb">float</span><span class="p">)</span>
 
-n=len(Matrix)
+<span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">Matrix</span><span class="p">)</span>
 
 
-#Eliminasi Gauss
+<span class="c1">#Eliminasi Gauss</span>
 
-for k in range(0,n-1):
-    for i in range(k+1,n):
-        if Matrix[i,k]!=0 :
-            lam=Matrix[i,k]/Matrix[k,k]
-            Matrix[i,k:n]=Matrix[i,k:n]-(Matrix[k,k:n]*lam)
-            Hasil[i]=Hasil[i]-(Hasil[k]*lam)
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">Matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span> <span class="p">:</span>
+            <span class="n">lam</span><span class="o">=</span><span class="n">Matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span><span class="o">/</span><span class="n">Matrix</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="n">k</span><span class="p">]</span>
+            <span class="n">Matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">:</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="n">Matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">:</span><span class="n">n</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">Matrix</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="n">k</span><span class="p">:</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">lam</span><span class="p">)</span>
+            <span class="n">Hasil</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">Hasil</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">Hasil</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">lam</span><span class="p">)</span>
 
-print(&quot;Matrix A : &quot;,&#39;\n&#39;,Matrix)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrix A : &quot;</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">Matrix</span><span class="p">)</span>
 
-#Subtitution
-x=np.zeros(n,float)
-for m in range(n-1,-1,-1):
-    x[m]=(Hasil[m]-np.dot(Matrix[m, m+1:n], x[m+1:n]))/Matrix[m,m]
-    print(&#39;Nilai X &#39;,m+1, &#39;=&#39;,x[m])
+<span class="c1">#Subtitution</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="nb">float</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">Hasil</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Matrix</span><span class="p">[</span><span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">]))</span><span class="o">/</span><span class="n">Matrix</span><span class="p">[</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nilai X &#39;</span><span class="p">,</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">[</span><span class="n">m</span><span class="p">])</span>
 </code></pre></div>
 
 
 <p><strong>Output:</strong></p>
-<div class="codehilite"><pre><span></span><code>Masukkan ordo Matrix: 3
+<div class="codehilite"><pre><span></span><code><span class="n">Masukkan</span> <span class="n">ordo</span> <span class="n">Matrix</span><span class="p">:</span> <span class="mi">3</span>
 
-Masukkan Nilai: 1
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">1</span>
 
-Masukkan Nilai: -1
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
 
-Masukkan Nilai: 4
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">4</span>
 
-Masukkan Nilai: 1
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">1</span>
 
-Masukkan Nilai: 4
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">4</span>
 
-Masukkan Nilai: 2
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">2</span>
 
-Masukkan Nilai: 3
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">3</span>
 
-Masukkan Nilai: 4
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">4</span>
 
-Masukkan Nilai: 2
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">2</span>
 
-Masukkan Hasil: 12
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">12</span>
 
-Masukkan Hasil: -2
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span>
 
-Masukkan Hasil: 2
-Matrix A :  
- [[ 1.  -1.   4. ]
- [ 0.   5.  -2. ]
- [ 0.   0.  -7.2]]
-Nilai X  3 = 2.0000000000000004
-Nilai X  2 = -2.0
-Nilai X  1 = 1.9999999999999982
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Matrix</span> <span class="n">A</span> <span class="p">:</span>  
+ <span class="p">[[</span> <span class="mf">1.</span>  <span class="o">-</span><span class="mf">1.</span>   <span class="mf">4.</span> <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.</span>   <span class="mf">5.</span>  <span class="o">-</span><span class="mf">2.</span> <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.</span>   <span class="mf">0.</span>  <span class="o">-</span><span class="mf">7.2</span><span class="p">]]</span>
+<span class="n">Nilai</span> <span class="n">X</span>  <span class="mi">3</span> <span class="o">=</span> <span class="mf">2.0000000000000004</span>
+<span class="n">Nilai</span> <span class="n">X</span>  <span class="mi">2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span>
+<span class="n">Nilai</span> <span class="n">X</span>  <span class="mi">1</span> <span class="o">=</span> <span class="mf">1.9999999999999982</span>
 </code></pre></div>
 
 
@@ -473,91 +473,91 @@ $$</p>
 </script>
 </div>
 <p><strong>Source Code</strong></p>
-<div class="codehilite"><pre><span></span><code>rom pprint import pprint
-from numpy import array, zeros, diag, diagflat, dot
-import numpy as np
+<div class="codehilite"><pre><span></span><code><span class="n">rom</span> <span class="n">pprint</span> <span class="kn">import</span> <span class="nn">pprint</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">array</span><span class="p">,</span> <span class="n">zeros</span><span class="p">,</span> <span class="n">diag</span><span class="p">,</span> <span class="n">diagflat</span><span class="p">,</span> <span class="n">dot</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-def jacobi(A,b,N=25,x=None):
-        #Membuat iniial guess                                                                                                                                                         
-    if x is None:
-        x = zeros(len(A[0]))
+<span class="k">def</span> <span class="nf">jacobi</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1">#Membuat iniial guess                                                                                                                                                         </span>
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 
-    #Membuat vektor dari elemen matrix A                                                                                                                                                                                                                                                                                                                 
-    D = diag(A)
-    R = A - diagflat(D)
+    <span class="c1">#Membuat vektor dari elemen matrix A                                                                                                                                                                                                                                                                                                                 </span>
+    <span class="n">D</span> <span class="o">=</span> <span class="n">diag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">A</span> <span class="o">-</span> <span class="n">diagflat</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
 
-    #Iterasi                                                                                                                                                                        
-    for i in range(N):
-        x = (b - dot(R,x)) / D
-    return x
+    <span class="c1">#Iterasi                                                                                                                                                                        </span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">dot</span><span class="p">(</span><span class="n">R</span><span class="p">,</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">D</span>
+    <span class="k">return</span> <span class="n">x</span>
 
-Mat1 = []
-Mat2 = []
+<span class="n">Mat1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">Mat2</span> <span class="o">=</span> <span class="p">[]</span>
 
-n = int(input(&quot;Masukkan ukuran Matrix: &quot;))
-for i in range(n):
-    baris=[]
-    for i in range(n):
-        a=int(input(&quot;Masukkan Nilai: &quot;))
-        baris.append(a)
-    Mat1.append(baris)
-for i in range(n):
-    h = int(input(&quot;Masukkan Hasil: &quot;))
-    Mat2.append(h)
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan ukuran Matrix: &quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">baris</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">a</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Nilai: &quot;</span><span class="p">))</span>
+        <span class="n">baris</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">Mat1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">baris</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Hasil: &quot;</span><span class="p">))</span>
+    <span class="n">Mat2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
 
-A = array(Mat1,float)
-b = array(Mat2,float)
-x=len(Mat1)
-guess = np.zeros(x,float)
+<span class="n">A</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">Mat1</span><span class="p">,</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">Mat2</span><span class="p">,</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">Mat1</span><span class="p">)</span>
+<span class="n">guess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="nb">float</span><span class="p">)</span>
 
-sol = jacobi(A,b,N=25,x=guess)
+<span class="n">sol</span> <span class="o">=</span> <span class="n">jacobi</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">guess</span><span class="p">)</span>
 
-print(&quot;A:&quot;)
-pprint(A)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A:&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 
-print(&quot;b:&quot;)
-pprint(b)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b:&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
-print(&quot;x:&quot;)
-pprint(sol)
-A = array(Ma
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x:&quot;</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">Ma</span>
 </code></pre></div>
 
 
 <p><strong>Output:</strong></p>
-<div class="codehilite"><pre><span></span><code>Masukkan ukuran Matrix: 3
+<div class="codehilite"><pre><span></span><code><span class="n">Masukkan</span> <span class="n">ukuran</span> <span class="n">Matrix</span><span class="p">:</span> <span class="mi">3</span>
 
-Masukkan Nilai: 5
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">5</span>
 
-Masukkan Nilai: 1
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">1</span>
 
-Masukkan Nilai: 2
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">2</span>
 
-Masukkan Nilai: 5
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">5</span>
 
-Masukkan Nilai: 5
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">5</span>
 
-Masukkan Nilai: 1
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">1</span>
 
-Masukkan Nilai: 2
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">2</span>
 
-Masukkan Nilai: 1
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">1</span>
 
-Masukkan Nilai: 2
+<span class="n">Masukkan</span> <span class="n">Nilai</span><span class="p">:</span> <span class="mi">2</span>
 
-Masukkan Hasil: 3
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">3</span>
 
-Masukkan Hasil: 4
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">4</span>
 
-Masukkan Hasil: 2
-A:
-array([[5., 1., 2.],
-       [5., 5., 1.],
-       [2., 1., 2.]])
-b:
-array([3., 4., 2.])
-x:
-array([0.48290144, 0.57758114, 0.74168875])
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">A</span><span class="p">:</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">]])</span>
+<span class="n">b</span><span class="p">:</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">])</span>
+<span class="n">x</span><span class="p">:</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">0.48290144</span><span class="p">,</span> <span class="mf">0.57758114</span><span class="p">,</span> <span class="mf">0.74168875</span><span class="p">])</span>
 </code></pre></div>
 
 
@@ -569,167 +569,156 @@ $$
 x_{i} = \frac{1}{a_{ii}}(b_{i}-\sum_{j=1}^{i-1}a_{ij}x_{j}^{(k)}-\sum_{j=i+1}^{n}a_{ij}x_{j}^{(k-1)}), i = 1,2,...,n;k=1,2,3,...
 $$</p>
 <p><strong>Source Code</strong></p>
-<div class="codehilite"><pre><span></span><code>def seidel(a, x ,b): 
-    #Mencari Panjang Matrix  
-    n = len(a)               
-    for j in range(0, n):        
-        d = b[j]                 
-        #Menghitung xi, yi, zi 
-        for i in range(0, n):    
-            if(j != i): 
-                d-=a[j][i] * x[i]        
-        x[j] = d / a[j][j] #Solusi   
-    return x     
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">seidel</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span> <span class="p">,</span><span class="n">b</span><span class="p">):</span> 
+    <span class="c1">#Mencari Panjang Matrix  </span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>               
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>        
+        <span class="n">d</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>                 
+        <span class="c1">#Menghitung xi, yi, zi </span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>    
+            <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">!=</span> <span class="n">i</span><span class="p">):</span> 
+                <span class="n">d</span><span class="o">-=</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>        
+        <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span> <span class="o">/</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="c1">#Solusi   </span>
+    <span class="k">return</span> <span class="n">x</span>     
 
-m=int(input(&quot;Masukkan Panjang Matrix: &quot;))
-a=[]
-b=[]
-for k in range(m):
-    mat1=[]
-    for i in range(m):
-        l=float(input(&quot;Masukkan a&quot;+str(k+1)+&quot;,&quot;+str(i+1)+&quot;: &quot;))
-        mat1.append(l)
-    h=float(input(&quot;Masukkan Hasil: &quot;))
-    b.append(h)
-    a.append(mat1)
+<span class="n">m</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Panjang Matrix: &quot;</span><span class="p">))</span>
+<span class="n">a</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">b</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">mat1</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+        <span class="n">l</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan a&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;: &quot;</span><span class="p">))</span>
+        <span class="n">mat1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">h</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan Hasil: &quot;</span><span class="p">))</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mat1</span><span class="p">)</span>
 
-n = 3                           
-x = [0, 0, 0]                        
-print(x) 
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>                           
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>                        
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
 
-for i in range(0, 100):          
-    x = seidel(a, x, b)
-    print(x)                       
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>          
+    <span class="n">x</span> <span class="o">=</span> <span class="n">seidel</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>        
 </code></pre></div>
 
 
 <p><strong>Output:</strong></p>
-<div class="codehilite"><pre><span></span><code>Masukkan Panjang Matrix: 3
-
-Masukkan a1,1: 4
-
-Masukkan a1,2: -1
-
-Masukkan a1,3: 1
-
-Masukkan Hasil: 7
-
-Masukkan a2,1: 4
-
-Masukkan a2,2: -8
-
-Masukkan a2,3: 1
-
-Masukkan Hasil: -21
-
-Masukkan a3,1: -2
-
-Masukkan a3,2: 1
-
-Masukkan a3,3: 5
-
-Masukkan Hasil: 15
-[0, 0, 0]
-[1.75, 3.5, 3.0]
-[1.875, 3.9375, 2.9625]
-[1.99375, 3.9921875, 2.9990625]
-[1.99828125, 3.9990234375, 2.9995078125]
-[1.99987890625, 3.9998779296875, 2.9999759765625003]
-[1.99997548828125, 3.9999847412109375, 2.999993247070312]
-[1.9999978735351562, 3.9999980926513667, 2.999999530883789]
-[1.9999996404418945, 3.9999997615814205, 2.9999999038604734]
-[1.9999999644302369, 3.9999999701976776, 2.9999999917325595]
-[1.9999999946162794, 3.9999999962747097, 2.99999999859157]
-[1.9999999994207849, 3.9999999995343387, 2.9999999998614464]
-[1.9999999999182232, 3.999999999941793, 2.999999999978931]
-[1.9999999999907154, 3.999999999992724, 2.9999999999977414]
-[1.9999999999987457, 3.9999999999990905, 2.9999999999996803]
-[1.9999999999998526, 3.9999999999998863, 2.9999999999999636]
-[1.9999999999999807, 3.999999999999986, 2.999999999999995]
-[1.9999999999999978, 3.9999999999999987, 2.9999999999999996]
-[1.9999999999999996, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
-[2.0, 4.0, 3.0]
+<p><strong>Output:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">Masukkan</span> <span class="n">Panjang</span> <span class="n">Matrix</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Masukkan</span> <span class="n">a1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">Masukkan</span> <span class="n">a1</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">a1</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">7</span>
+<span class="n">Masukkan</span> <span class="n">a2</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">Masukkan</span> <span class="n">a2</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span> <span class="o">-</span><span class="mi">8</span>
+<span class="n">Masukkan</span> <span class="n">a2</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="o">-</span><span class="mi">21</span>
+<span class="n">Masukkan</span> <span class="n">a3</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span>
+<span class="n">Masukkan</span> <span class="n">a3</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Masukkan</span> <span class="n">a3</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">Masukkan</span> <span class="n">Hasil</span><span class="p">:</span> <span class="mi">15</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.75</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.875</span><span class="p">,</span> <span class="mf">3.9375</span><span class="p">,</span> <span class="mf">2.9625</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.99375</span><span class="p">,</span> <span class="mf">3.9921875</span><span class="p">,</span> <span class="mf">2.9990625</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.99828125</span><span class="p">,</span> <span class="mf">3.9990234375</span><span class="p">,</span> <span class="mf">2.9995078125</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.99987890625</span><span class="p">,</span> <span class="mf">3.9998779296875</span><span class="p">,</span> <span class="mf">2.9999759765625003</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.99997548828125</span><span class="p">,</span> <span class="mf">3.9999847412109375</span><span class="p">,</span> <span class="mf">2.999993247070312</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999978735351562</span><span class="p">,</span> <span class="mf">3.9999980926513667</span><span class="p">,</span> <span class="mf">2.999999530883789</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999996404418945</span><span class="p">,</span> <span class="mf">3.9999997615814205</span><span class="p">,</span> <span class="mf">2.9999999038604734</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999644302369</span><span class="p">,</span> <span class="mf">3.9999999701976776</span><span class="p">,</span> <span class="mf">2.9999999917325595</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999946162794</span><span class="p">,</span> <span class="mf">3.9999999962747097</span><span class="p">,</span> <span class="mf">2.99999999859157</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999994207849</span><span class="p">,</span> <span class="mf">3.9999999995343387</span><span class="p">,</span> <span class="mf">2.9999999998614464</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999182232</span><span class="p">,</span> <span class="mf">3.999999999941793</span><span class="p">,</span> <span class="mf">2.999999999978931</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999907154</span><span class="p">,</span> <span class="mf">3.999999999992724</span><span class="p">,</span> <span class="mf">2.9999999999977414</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999987457</span><span class="p">,</span> <span class="mf">3.9999999999990905</span><span class="p">,</span> <span class="mf">2.9999999999996803</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999998526</span><span class="p">,</span> <span class="mf">3.9999999999998863</span><span class="p">,</span> <span class="mf">2.9999999999999636</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999807</span><span class="p">,</span> <span class="mf">3.999999999999986</span><span class="p">,</span> <span class="mf">2.999999999999995</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999978</span><span class="p">,</span> <span class="mf">3.9999999999999987</span><span class="p">,</span> <span class="mf">2.9999999999999996</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">1.9999999999999996</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
 </code></pre></div>
                 
                   
