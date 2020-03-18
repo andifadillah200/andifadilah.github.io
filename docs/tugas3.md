@@ -32,7 +32,7 @@ $$
 
 **Source Code**
 
-```phyton
+```python
 import numpy as np
 
 #Definisi Matrix
@@ -76,7 +76,7 @@ for m in range(n-1,-1,-1):
 
 **Output:**
 
-```phyton
+```python
 Masukkan ordo Matrix: 3
 
 Masukkan Nilai: 1
@@ -149,9 +149,10 @@ $$
 $$
 
 
+
 **Source Code**
 
-```phyton
+```python
 rom pprint import pprint
 from numpy import array, zeros, diag, diagflat, dot
 import numpy as np
@@ -204,7 +205,7 @@ A = array(Ma
 
 **Output:**
 
-```phyton
+```python
 Masukkan ukuran Matrix: 3
 
 Masukkan Nilai: 5
@@ -257,7 +258,7 @@ $$
 
 **Source Code**
 
-```phyton
+```python
 def seidel(a, x ,b): 
     #Mencari Panjang Matrix  
     n = len(a)               
@@ -288,36 +289,29 @@ print(x)
 
 for i in range(0, 100):          
     x = seidel(a, x, b)
-    print(x)                       
+    print(x)        
+    
 ```
 
 **Output:**
 
-```phyton
+
+
+**Output:**
+
+```python
 Masukkan Panjang Matrix: 3
-
 Masukkan a1,1: 4
-
 Masukkan a1,2: -1
-
 Masukkan a1,3: 1
-
 Masukkan Hasil: 7
-
 Masukkan a2,1: 4
-
 Masukkan a2,2: -8
-
 Masukkan a2,3: 1
-
 Masukkan Hasil: -21
-
 Masukkan a3,1: -2
-
 Masukkan a3,2: 1
-
 Masukkan a3,3: 5
-
 Masukkan Hasil: 15
 [0, 0, 0]
 [1.75, 3.5, 3.0]
@@ -420,5 +414,6 @@ Masukkan Hasil: 15
 [2.0, 4.0, 3.0]
 [2.0, 4.0, 3.0]
 [2.0, 4.0, 3.0]
+
 ```
 
