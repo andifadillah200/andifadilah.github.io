@@ -73,10 +73,11 @@ def fungsi (x) :
 print("f(x) = 1/(1+x)")
 a = float(input("Masukkan batas bawah integral : "))
 b = float(input("Masukkan batas atas integral : "))
+c = int(input("masukkan n : "))
+eror = []
 
-print("iterasi","n","trapesium")
-for iterasi in range (1,16,1):
-    n=2*iterasi
+for iterasi in range (0,c):
+    n=2**iterasi
     h=(b-a)/n
 
     xi = a
@@ -85,8 +86,13 @@ for iterasi in range (1,16,1):
         xi = xi+h
         y += fungsi(xi)
     hasil = (h)*((fungsi(a)+(2*y)+fungsi(b))/2)
-
-    print (iterasi,n,hasil)
+    eror.append(hasil)
+    print ('iterasi ke-',iterasi+1,"n:",n,'hasil =',hasil)
+print (eror[iterasi-1])
+print(eror[iterasi])
+akhir = (eror[iterasi-1]-eror[iterasi])
+print(akhir)
+print ("estimasi error : "+str(akhir))
 
 ```
 
@@ -96,23 +102,20 @@ for iterasi in range (1,16,1):
 
 ```python
 f(x) = 1/(1+x)
-Masukkan batas bawah integral : 5
-Masukkan batas atas integral : 23
-iterasi n trapesium
-1 2 1.5375
-2 4 1.428090659340659
-3 6 1.4053571428571427
-4 8 1.3971262491036611
-5 10 1.3932610298649446
-6 12 1.3911456598956602
-7 14 1.389864598362667
-8 16 1.3890308500940944
-9 18 1.3884581777535068
-10 20 1.388048015512552
-11 22 1.3877442535422602
-12 24 1.3875130525793768
-13 26 1.3873330247622349
-14 28 1.3871901162774283
-15 30 1.387074784968122
+Masukkan batas bawah integral : 2
+Masukkan batas atas integral : 6
+masukkan n : 8
+iterasi ke- 1 n: 1 hasil = 0.9523809523809523
+iterasi ke- 2 n: 2 hasil = 0.8761904761904762
+iterasi ke- 3 n: 4 hasil = 0.8547619047619047
+iterasi ke- 4 n: 8 hasil = 0.8491813741813743
+iterasi ke- 5 n: 16 hasil = 0.8477698845652135
+iterasi ke- 6 n: 32 hasil = 0.847415938934486
+iterasi ke- 7 n: 64 hasil = 0.8473273845698198
+iterasi ke- 8 n: 128 hasil = 0.8473052417171961
+0.8473273845698198
+0.8473052417171961
+2.214285262369664e-05
+estimasi error : 2.214285262369664e-05
 ```
 
