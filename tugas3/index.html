@@ -42,7 +42,7 @@
     
     
       
-        <title>Metode eliminasi gauss,Jacobi dan Gauss Seidel - A. Fadilah Aini (180411100114)</title>
+        <title>Metode Gauss Jordan,Iterasi Jacobi dan Gauss Seidel - A. Fadilah Aini (180411100114)</title>
       
     
     
@@ -140,7 +140,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Metode eliminasi gauss,Jacobi dan Gauss Seidel
+                Metode Gauss Jordan,Iterasi Jacobi dan Gauss Seidel
               
             </span>
           
@@ -293,8 +293,8 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-    <a href="./" title="Metode eliminasi gauss,Jacobi dan Gauss Seidel" class="md-nav__link md-nav__link--active">
-      Metode eliminasi gauss,Jacobi dan Gauss Seidel
+    <a href="./" title="Metode Gauss Jordan,Iterasi Jacobi dan Gauss Seidel" class="md-nav__link md-nav__link--active">
+      Metode Gauss Jordan,Iterasi Jacobi dan Gauss Seidel
     </a>
     
   </li>
@@ -315,7 +315,7 @@
                   <a href="https://github.com/andifadillah200/Datamining/edit/master/docs/tugas3.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Metode eliminasi gauss,Jacobi dan Gauss Seidel</h1>
+                  <h1>Metode Gauss Jordan,Iterasi Jacobi dan Gauss Seidel</h1>
                 
                 <p><strong>Metode Gauss Jordan, Iterasi Jacobi, dan Gauss Seidel</strong></p>
 <p><strong>Eliminasi Gauss Jordan</strong></p>
@@ -461,13 +461,18 @@ X^{(k)}=D^-1(b-(L+U)X^{(k-1)}
 $$
 Dimana k merupakan banyaknya iterasi. Jika x_k menyatakan hampiran ke - k penyelesaian SPL, maka x_0 adalah hampiran awal.
 $$
-x_{i}^{(k)}=\frac{1}{a_{ii}}(\sum x^{n}<em>{j\ne i}),i = 1,2,...n;k=1,2,3,...,
-$$
-Suatu matriks A berukuran n x n dikatakan dominan secara diagonal jika:
-$$
-|a</em>{ii}|&gt;|a_{i,1}|+...+|a_{i,i-1}|+|a_{i,i+1}|+...+|a_{in}|
-$$
-<strong>Source Code</strong></p>
+x_{i}^{(k)}=\frac{1}{a_{ii}}(\sum x^{n}_{j\ne i}),i = 1,2,...n;k=1,2,3,...,
+$$</p>
+<p>Suatu matriks A berukuran n x n dikatakan dominan secara diagonal jika:</p>
+<div>
+<div class="MathJax_Preview">
+|a_{ii}|&gt;|a_{i,1}|+...+|a_{i,i-1}|+|a_{i,i+1}|+...+|a_{in}|
+</div>
+<script type="math/tex; mode=display">
+|a_{ii}|>|a_{i,1}|+...+|a_{i,i-1}|+|a_{i,i+1}|+...+|a_{in}|
+</script>
+</div>
+<p><strong>Source Code</strong></p>
 <div class="codehilite"><pre><span></span><code>rom pprint import pprint
 from numpy import array, zeros, diag, diagflat, dot
 import numpy as np
