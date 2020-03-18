@@ -404,10 +404,11 @@ R(n,0) = \frac{1}{2}R(n-1,0)+h \left [ \sum _{k=1}^{2(n-1)}f(a+(2k-1)h)\right ]
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;f(x) = 1/(1+x)&quot;</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan batas bawah integral : &quot;</span><span class="p">))</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan batas atas integral : &quot;</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;masukkan n : &quot;</span><span class="p">))</span>
+<span class="n">eror</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;iterasi&quot;</span><span class="p">,</span><span class="s2">&quot;n&quot;</span><span class="p">,</span><span class="s2">&quot;trapesium&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">iterasi</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">iterasi</span>
+<span class="k">for</span> <span class="n">iterasi</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="o">**</span><span class="n">iterasi</span>
     <span class="n">h</span><span class="o">=</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
 
     <span class="n">xi</span> <span class="o">=</span> <span class="n">a</span>
@@ -416,31 +417,33 @@ R(n,0) = \frac{1}{2}R(n-1,0)+h \left [ \sum _{k=1}^{2(n-1)}f(a+(2k-1)h)\right ]
         <span class="n">xi</span> <span class="o">=</span> <span class="n">xi</span><span class="o">+</span><span class="n">h</span>
         <span class="n">y</span> <span class="o">+=</span> <span class="n">fungsi</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span>
     <span class="n">hasil</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="n">fungsi</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="n">fungsi</span><span class="p">(</span><span class="n">b</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-
-    <span class="nb">print</span> <span class="p">(</span><span class="n">iterasi</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">hasil</span><span class="p">)</span>
+    <span class="n">eror</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;iterasi ke-&#39;</span><span class="p">,</span><span class="n">iterasi</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;n:&quot;</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s1">&#39;hasil =&#39;</span><span class="p">,</span><span class="n">hasil</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">eror</span><span class="p">[</span><span class="n">iterasi</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eror</span><span class="p">[</span><span class="n">iterasi</span><span class="p">])</span>
+<span class="n">akhir</span> <span class="o">=</span> <span class="p">(</span><span class="n">eror</span><span class="p">[</span><span class="n">iterasi</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">eror</span><span class="p">[</span><span class="n">iterasi</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">akhir</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;estimasi error : &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">akhir</span><span class="p">))</span>
 </code></pre></div>
 
 
 <p><strong>Output:</strong></p>
 <div class="codehilite"><pre><span></span><code><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="p">)</span>
-<span class="n">Masukkan</span> <span class="n">batas</span> <span class="n">bawah</span> <span class="n">integral</span> <span class="p">:</span> <span class="mi">5</span>
-<span class="n">Masukkan</span> <span class="n">batas</span> <span class="n">atas</span> <span class="n">integral</span> <span class="p">:</span> <span class="mi">23</span>
-<span class="n">iterasi</span> <span class="n">n</span> <span class="n">trapesium</span>
-<span class="mi">1</span> <span class="mi">2</span> <span class="mf">1.5375</span>
-<span class="mi">2</span> <span class="mi">4</span> <span class="mf">1.428090659340659</span>
-<span class="mi">3</span> <span class="mi">6</span> <span class="mf">1.4053571428571427</span>
-<span class="mi">4</span> <span class="mi">8</span> <span class="mf">1.3971262491036611</span>
-<span class="mi">5</span> <span class="mi">10</span> <span class="mf">1.3932610298649446</span>
-<span class="mi">6</span> <span class="mi">12</span> <span class="mf">1.3911456598956602</span>
-<span class="mi">7</span> <span class="mi">14</span> <span class="mf">1.389864598362667</span>
-<span class="mi">8</span> <span class="mi">16</span> <span class="mf">1.3890308500940944</span>
-<span class="mi">9</span> <span class="mi">18</span> <span class="mf">1.3884581777535068</span>
-<span class="mi">10</span> <span class="mi">20</span> <span class="mf">1.388048015512552</span>
-<span class="mi">11</span> <span class="mi">22</span> <span class="mf">1.3877442535422602</span>
-<span class="mi">12</span> <span class="mi">24</span> <span class="mf">1.3875130525793768</span>
-<span class="mi">13</span> <span class="mi">26</span> <span class="mf">1.3873330247622349</span>
-<span class="mi">14</span> <span class="mi">28</span> <span class="mf">1.3871901162774283</span>
-<span class="mi">15</span> <span class="mi">30</span> <span class="mf">1.387074784968122</span>
+<span class="n">Masukkan</span> <span class="n">batas</span> <span class="n">bawah</span> <span class="n">integral</span> <span class="p">:</span> <span class="mi">2</span>
+<span class="n">Masukkan</span> <span class="n">batas</span> <span class="n">atas</span> <span class="n">integral</span> <span class="p">:</span> <span class="mi">6</span>
+<span class="n">masukkan</span> <span class="n">n</span> <span class="p">:</span> <span class="mi">8</span>
+<span class="n">iterasi</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">1</span> <span class="n">n</span><span class="p">:</span> <span class="mi">1</span> <span class="n">hasil</span> <span class="o">=</span> <span class="mf">0.9523809523809523</span>
+<span class="n">iterasi</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">2</span> <span class="n">n</span><span class="p">:</span> <span class="mi">2</span> <span class="n">hasil</span> <span class="o">=</span> <span class="mf">0.8761904761904762</span>
+<span class="n">iterasi</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">3</span> <span class="n">n</span><span class="p">:</span> <span class="mi">4</span> <span class="n">hasil</span> <span class="o">=</span> <span class="mf">0.8547619047619047</span>
+<span class="n">iterasi</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">4</span> <span class="n">n</span><span class="p">:</span> <span class="mi">8</span> <span class="n">hasil</span> <span class="o">=</span> <span class="mf">0.8491813741813743</span>
+<span class="n">iterasi</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">5</span> <span class="n">n</span><span class="p">:</span> <span class="mi">16</span> <span class="n">hasil</span> <span class="o">=</span> <span class="mf">0.8477698845652135</span>
+<span class="n">iterasi</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">6</span> <span class="n">n</span><span class="p">:</span> <span class="mi">32</span> <span class="n">hasil</span> <span class="o">=</span> <span class="mf">0.847415938934486</span>
+<span class="n">iterasi</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">7</span> <span class="n">n</span><span class="p">:</span> <span class="mi">64</span> <span class="n">hasil</span> <span class="o">=</span> <span class="mf">0.8473273845698198</span>
+<span class="n">iterasi</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">8</span> <span class="n">n</span><span class="p">:</span> <span class="mi">128</span> <span class="n">hasil</span> <span class="o">=</span> <span class="mf">0.8473052417171961</span>
+<span class="mf">0.8473273845698198</span>
+<span class="mf">0.8473052417171961</span>
+<span class="mf">2.214285262369664e-05</span>
+<span class="n">estimasi</span> <span class="n">error</span> <span class="p">:</span> <span class="mf">2.214285262369664e-05</span>
 </code></pre></div>
                 
                   
