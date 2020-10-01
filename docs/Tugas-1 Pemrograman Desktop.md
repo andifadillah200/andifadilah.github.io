@@ -2,9 +2,9 @@
 
 **Soalan dan Jawaban Latihan **
 
-1. Buat program. deklarasi 5 variabel lakukan perhitungan rata-rata 5 nilai tsb tampilkan hasilnya 
+- Buat program. deklarasi 5 variabel lakukan perhitungan rata-rata 5 nilai tsb tampilkan hasilnya 
 
-   **Listing Program no 1**
+**Listing Program no 1**
 
 ```python
 nilai_1= 10
@@ -24,9 +24,10 @@ print("hasil dari nilai rata-rata adalah:", average)
 hasil dari nilai rata-rata adalah: 14.4
 ```
 
-2. Buat program menghitung luas dan keliling bangun datar dengan menerima inputan dari user 
+- Buat program menghitung luas dan keliling bangun datar dengan menerima inputan dari user 
 
-   **Listing Program no 2**
+
+**Listing Program no 2**
 
 ```python
 print("Menghitung luas dan keliling segitiga")
@@ -57,9 +58,10 @@ luas segitiga adalah: 17.5
 keliling segitiga adalah: 6
 ```
 
-3. Buat program untuk menghitung index massa tubuh / BMI (Body mass index) hitung BMI rumus BMI ? cari di internet ya kemudan tentukan kelompok berat badan Di bawah 18,5 = Berat badan kurang 18,5 – 22,9 = Berat badan normal 23 – 29,9 = Berat badan berlebih (kecenderungan obesitas) 30 ke atas = obesitas anda termasuk yang mana ?
+- Buat program untuk menghitung index massa tubuh / BMI (Body mass index) hitung BMI rumus BMI ? cari di internet ya kemudan tentukan kelompok berat badan Di bawah 18,5 = Berat badan kurang 18,5 – 22,9 = Berat badan normal 23 – 29,9 = Berat badan berlebih (kecenderungan obesitas) 30 ke atas = obesitas anda termasuk yang mana ?
 
-   **Listing Program no 3**
+
+**Listing Program no 3**
 
 ```python
 berat= float(input("masukkan berat badan (kg):"))
@@ -88,9 +90,10 @@ index massa tubuh: 20.202020202020204
 berat badan anda normal.
 ```
 
-4. Buat program untuk menentukan nilai maksimal dan minimal dari sejumlah nilai masukan N.
+- Buat program untuk menentukan nilai maksimal dan minimal dari sejumlah nilai masukan N.
 
-   **Listing Program no 4**
+
+**Listing Program no 4**
 
 ```python
 def angkaMax(daftar):
@@ -128,9 +131,10 @@ angka Max: 14
 angka Min: 2
 ```
 
-5. Buat program untuk menentukan validasi username dan password, dimana akan di ulang maksimal 3 kali, jika benar akan muncul komentar ” anda berhasil masuk” tapi jika tidak muncul komentar ” maaf user name dan password anda salah”
+- Buat program untuk menentukan validasi username dan password, dimana akan di ulang maksimal 3 kali, jika benar akan muncul komentar ” anda berhasil masuk” tapi jika tidak muncul komentar ” maaf user name dan password anda salah”
 
-   **Listing Program no 5**
+
+**Listing Program no 5**
 
 ```python
 Username= "fadilah"
