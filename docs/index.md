@@ -3,6 +3,6 @@
 ## **Profil Singkat**
 - Nama : A.Fadilah Aini
 - NIM : 180411100114
-- Kelas : Komputasi Numerik Kelas A
-- Dosen Pengampuh : Mulaab, S.Si, M.Kom
+- Kelas : Pemrograman Desktop
+- Dosen Pengampuh : Moch Kautsar Sophan
 - Program Studi : Teknik Informatikaaa
