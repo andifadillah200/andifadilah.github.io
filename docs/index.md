@@ -3,6 +3,6 @@
 ## **Profil Singkat**
 - Nama : A.Fadilah Aini
 - NIM : 180411100114
-- Kelas : Pemrograman Desktop
+- Kelas : Pemrograman Desktop (A)
 - Dosen Pengampuh : Moch Kautsar Sophan
 - Program Studi : Teknik Informatikaaa
